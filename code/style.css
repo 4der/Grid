@@ -1,10 +1,10 @@
 * {
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
   margin: 0;
-  padding: 10px;
+  padding: 60px;
   background-color: lightgrey;
 }
 
@@ -21,13 +21,13 @@ body {
   color: black;
 }
 
-.grid-item > img {
+.grid-item>img {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 .tall {
@@ -35,12 +35,31 @@ body {
 }
 
 .wide {
-grid-column: span 2;
+  grid-column: span 2;
 }
 
 @media (max-width: 500px) {
+  body {
+    padding: 20px;
+  }
   .my-grid {
     grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 250px;
   }
+  .wide {
+    grid-column: span 1;
+  }
+}
 
+@media (min-width: 500px) and (max-width: 900px) {
+  body {
+    padding: 40px;
+  }
+  .my-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
+  }
+  .wide {
+    grid-column: span 2;
+  }
 }
